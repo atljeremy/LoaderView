@@ -323,7 +323,7 @@ class LoaderView: LVView {
             _spinnerViewOuter.layer?.anchorPoint = CGPointMake(0.5, 0.5)
             _spinnerViewInner.layer?.anchorPoint = CGPointMake(0.5, 0.5)
             NSAnimationContext.runAnimationGroup({ context in
-                context.duration = 1.0
+                context.duration = 0.2
                 self._rotation += CGFloat(M_PI_4)
                 self._spinnerViewOuter.layer?.setAffineTransform(CGAffineTransformMakeRotation(self._rotation))
                 self._spinnerViewInner.layer?.setAffineTransform(CGAffineTransformMakeRotation(-self._rotation))

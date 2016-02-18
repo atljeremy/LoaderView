@@ -1,6 +1,6 @@
 //
-//  LoaderViewOSXExampleUITests.swift
-//  LoaderViewOSXExampleUITests
+//  LoaderViewOSXUITests.swift
+//  LoaderViewOSXUITests
 //
 //  Created by Jeremy Fox on 2/17/16.
 //  Copyright © 2016 Jeremy Fox. All rights reserved.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class LoaderViewOSXExampleUITests: XCTestCase {
+class LoaderViewOSXUITests: XCTestCase {
         
     override func setUp() {
         super.setUp()

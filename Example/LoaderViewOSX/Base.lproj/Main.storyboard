@@ -11,11 +11,11 @@
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
                     <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
                         <items>
-                            <menuItem title="LoaderViewOSXExample" id="1Xt-HY-uBw">
+                            <menuItem title="LoaderViewOSX" id="1Xt-HY-uBw">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="LoaderViewOSXExample" systemMenu="apple" id="uQy-DD-JDr">
+                                <menu key="submenu" title="LoaderViewOSX" systemMenu="apple" id="uQy-DD-JDr">
                                     <items>
-                                        <menuItem title="About LoaderViewOSXExample" id="5kV-Vb-QxS">
+                                        <menuItem title="About LoaderViewOSX" id="5kV-Vb-QxS">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
@@ -29,7 +29,7 @@
                                             <menu key="submenu" title="Services" systemMenu="services" id="hz9-B4-Xy5"/>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
-                                        <menuItem title="Hide LoaderViewOSXExample" keyEquivalent="h" id="Olw-nP-bQN">
+                                        <menuItem title="Hide LoaderViewOSX" keyEquivalent="h" id="Olw-nP-bQN">
                                             <connections>
                                                 <action selector="hide:" target="Ady-hI-5gd" id="PnN-Uc-m68"/>
                                             </connections>
@@ -47,7 +47,7 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
-                                        <menuItem title="Quit LoaderViewOSXExample" keyEquivalent="q" id="4sb-4s-VLi">
+                                        <menuItem title="Quit LoaderViewOSX" keyEquivalent="q" id="4sb-4s-VLi">
                                             <connections>
                                                 <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
                                             </connections>
@@ -628,7 +628,7 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
                                     <items>
-                                        <menuItem title="LoaderViewOSXExample Help" keyEquivalent="?" id="FKE-Sm-Kum">
+                                        <menuItem title="LoaderViewOSX Help" keyEquivalent="?" id="FKE-Sm-Kum">
                                             <connections>
                                                 <action selector="showHelp:" target="Ady-hI-5gd" id="y7X-2Q-9no"/>
                                             </connections>
@@ -642,7 +642,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="LoaderViewOSXExample" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="LoaderViewOSX" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
@@ -668,27 +668,27 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="LoaderViewOSXExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="LoaderViewOSX" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="830" height="830"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="30n-NT-YVY">
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tFV-QY-43d">
                                 <rect key="frame" x="0.0" y="0.0" width="830" height="830"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="bg" id="lAP-f1-cE5"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="bg" id="1Qx-p4-4xZ"/>
                             </imageView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="30n-NT-YVY" secondAttribute="trailing" id="EoA-v6-Ea2"/>
-                            <constraint firstAttribute="bottom" secondItem="30n-NT-YVY" secondAttribute="bottom" id="N4U-yo-gM6"/>
-                            <constraint firstItem="30n-NT-YVY" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="Uxn-ED-NNe"/>
-                            <constraint firstItem="30n-NT-YVY" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="ycg-Gz-G3f"/>
+                            <constraint firstItem="tFV-QY-43d" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="3Ww-gh-ctW"/>
+                            <constraint firstAttribute="bottom" secondItem="tFV-QY-43d" secondAttribute="bottom" id="Awf-wo-vYC"/>
+                            <constraint firstItem="tFV-QY-43d" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="Mub-d9-COA"/>
+                            <constraint firstAttribute="trailing" secondItem="tFV-QY-43d" secondAttribute="trailing" id="qLt-Lk-dLz"/>
                         </constraints>
                     </view>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="369" y="888"/>
+            <point key="canvasLocation" x="189" y="987"/>
         </scene>
     </scenes>
     <resources>

@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  LoaderViewOSXExample
+//  LoaderViewOSX
 //
 //  Created by Jeremy Fox on 2/17/16.
 //  Copyright © 2016 Jeremy Fox. All rights reserved.
@@ -9,12 +9,12 @@
 import Cocoa
 
 class ViewController: NSViewController {
-
+    
     private let loaderView = LoaderView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         loaderView.label.stringValue = "Loading..."
         loaderView.startLoadingInView(view)
         
@@ -39,6 +39,6 @@ class ViewController: NSViewController {
             self.loaderView.loadingComplete()
         }
     }
-
+    
 }
 

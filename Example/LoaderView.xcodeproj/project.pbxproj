@@ -15,6 +15,13 @@
 		199569EB1C74C1AA0031779F /* LoaderViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199569EA1C74C1AA0031779F /* LoaderViewTests.swift */; };
 		199569F61C74C1AA0031779F /* LoaderViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199569F51C74C1AA0031779F /* LoaderViewUITests.swift */; };
 		19956A041C74C1E50031779F /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19956A031C74C1E50031779F /* LoaderView.swift */; };
+		19956A451C7555C00031779F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19956A441C7555C00031779F /* AppDelegate.swift */; };
+		19956A471C7555C00031779F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19956A461C7555C00031779F /* ViewController.swift */; };
+		19956A491C7555C00031779F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19956A481C7555C00031779F /* Assets.xcassets */; };
+		19956A4C1C7555C00031779F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19956A4A1C7555C00031779F /* Main.storyboard */; };
+		19956A571C7555C00031779F /* LoaderViewOSXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19956A561C7555C00031779F /* LoaderViewOSXTests.swift */; };
+		19956A621C7555C00031779F /* LoaderViewOSXUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19956A611C7555C00031779F /* LoaderViewOSXUITests.swift */; };
+		19956A6D1C7555E80031779F /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19956A031C74C1E50031779F /* LoaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +38,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 199569D11C74C1AA0031779F;
 			remoteInfo = LoaderView;
+		};
+		19956A531C7555C00031779F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 199569CA1C74C1AA0031779F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 19956A411C7555C00031779F;
+			remoteInfo = LoaderViewOSX;
+		};
+		19956A5E1C7555C00031779F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 199569CA1C74C1AA0031779F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 19956A411C7555C00031779F;
+			remoteInfo = LoaderViewOSX;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -49,6 +70,18 @@
 		199569F51C74C1AA0031779F /* LoaderViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderViewUITests.swift; sourceTree = "<group>"; };
 		199569F71C74C1AA0031779F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		19956A031C74C1E50031779F /* LoaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoaderView.swift; path = ../LoaderView.swift; sourceTree = "<group>"; };
+		19956A421C7555C00031779F /* LoaderViewOSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoaderViewOSX.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		19956A441C7555C00031779F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		19956A461C7555C00031779F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		19956A481C7555C00031779F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		19956A4B1C7555C00031779F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		19956A4D1C7555C00031779F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19956A521C7555C00031779F /* LoaderViewOSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoaderViewOSXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		19956A561C7555C00031779F /* LoaderViewOSXTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderViewOSXTests.swift; sourceTree = "<group>"; };
+		19956A581C7555C00031779F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19956A5D1C7555C00031779F /* LoaderViewOSXUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoaderViewOSXUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		19956A611C7555C00031779F /* LoaderViewOSXUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderViewOSXUITests.swift; sourceTree = "<group>"; };
+		19956A631C7555C00031779F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +106,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		19956A3F1C7555C00031779F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19956A4F1C7555C00031779F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19956A5A1C7555C00031779F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -83,6 +137,9 @@
 				199569D41C74C1AA0031779F /* LoaderView */,
 				199569E91C74C1AA0031779F /* LoaderViewTests */,
 				199569F41C74C1AA0031779F /* LoaderViewUITests */,
+				19956A431C7555C00031779F /* LoaderViewOSX */,
+				19956A551C7555C00031779F /* LoaderViewOSXTests */,
+				19956A601C7555C00031779F /* LoaderViewOSXUITests */,
 				199569D31C74C1AA0031779F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -93,6 +150,9 @@
 				199569D21C74C1AA0031779F /* LoaderView.app */,
 				199569E61C74C1AA0031779F /* LoaderViewTests.xctest */,
 				199569F11C74C1AA0031779F /* LoaderViewUITests.xctest */,
+				19956A421C7555C00031779F /* LoaderViewOSX.app */,
+				19956A521C7555C00031779F /* LoaderViewOSXTests.xctest */,
+				19956A5D1C7555C00031779F /* LoaderViewOSXUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -126,6 +186,36 @@
 				199569F71C74C1AA0031779F /* Info.plist */,
 			);
 			path = LoaderViewUITests;
+			sourceTree = "<group>";
+		};
+		19956A431C7555C00031779F /* LoaderViewOSX */ = {
+			isa = PBXGroup;
+			children = (
+				19956A441C7555C00031779F /* AppDelegate.swift */,
+				19956A461C7555C00031779F /* ViewController.swift */,
+				19956A481C7555C00031779F /* Assets.xcassets */,
+				19956A4A1C7555C00031779F /* Main.storyboard */,
+				19956A4D1C7555C00031779F /* Info.plist */,
+			);
+			path = LoaderViewOSX;
+			sourceTree = "<group>";
+		};
+		19956A551C7555C00031779F /* LoaderViewOSXTests */ = {
+			isa = PBXGroup;
+			children = (
+				19956A561C7555C00031779F /* LoaderViewOSXTests.swift */,
+				19956A581C7555C00031779F /* Info.plist */,
+			);
+			path = LoaderViewOSXTests;
+			sourceTree = "<group>";
+		};
+		19956A601C7555C00031779F /* LoaderViewOSXUITests */ = {
+			isa = PBXGroup;
+			children = (
+				19956A611C7555C00031779F /* LoaderViewOSXUITests.swift */,
+				19956A631C7555C00031779F /* Info.plist */,
+			);
+			path = LoaderViewOSXUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,6 +274,59 @@
 			productReference = 199569F11C74C1AA0031779F /* LoaderViewUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		19956A411C7555C00031779F /* LoaderViewOSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 19956A6A1C7555C00031779F /* Build configuration list for PBXNativeTarget "LoaderViewOSX" */;
+			buildPhases = (
+				19956A3E1C7555C00031779F /* Sources */,
+				19956A3F1C7555C00031779F /* Frameworks */,
+				19956A401C7555C00031779F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LoaderViewOSX;
+			productName = LoaderViewOSX;
+			productReference = 19956A421C7555C00031779F /* LoaderViewOSX.app */;
+			productType = "com.apple.product-type.application";
+		};
+		19956A511C7555C00031779F /* LoaderViewOSXTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 19956A6B1C7555C00031779F /* Build configuration list for PBXNativeTarget "LoaderViewOSXTests" */;
+			buildPhases = (
+				19956A4E1C7555C00031779F /* Sources */,
+				19956A4F1C7555C00031779F /* Frameworks */,
+				19956A501C7555C00031779F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				19956A541C7555C00031779F /* PBXTargetDependency */,
+			);
+			name = LoaderViewOSXTests;
+			productName = LoaderViewOSXTests;
+			productReference = 19956A521C7555C00031779F /* LoaderViewOSXTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		19956A5C1C7555C00031779F /* LoaderViewOSXUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 19956A6C1C7555C00031779F /* Build configuration list for PBXNativeTarget "LoaderViewOSXUITests" */;
+			buildPhases = (
+				19956A591C7555C00031779F /* Sources */,
+				19956A5A1C7555C00031779F /* Frameworks */,
+				19956A5B1C7555C00031779F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				19956A5F1C7555C00031779F /* PBXTargetDependency */,
+			);
+			name = LoaderViewOSXUITests;
+			productName = LoaderViewOSXUITests;
+			productReference = 19956A5D1C7555C00031779F /* LoaderViewOSXUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -205,6 +348,17 @@
 						CreatedOnToolsVersion = 7.2.1;
 						TestTargetID = 199569D11C74C1AA0031779F;
 					};
+					19956A411C7555C00031779F = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					19956A511C7555C00031779F = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = 19956A411C7555C00031779F;
+					};
+					19956A5C1C7555C00031779F = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = 19956A411C7555C00031779F;
+					};
 				};
 			};
 			buildConfigurationList = 199569CD1C74C1AA0031779F /* Build configuration list for PBXProject "LoaderView" */;
@@ -223,6 +377,9 @@
 				199569D11C74C1AA0031779F /* LoaderView */,
 				199569E51C74C1AA0031779F /* LoaderViewTests */,
 				199569F01C74C1AA0031779F /* LoaderViewUITests */,
+				19956A411C7555C00031779F /* LoaderViewOSX */,
+				19956A511C7555C00031779F /* LoaderViewOSXTests */,
+				19956A5C1C7555C00031779F /* LoaderViewOSXUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -246,6 +403,29 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		199569EF1C74C1AA0031779F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19956A401C7555C00031779F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19956A491C7555C00031779F /* Assets.xcassets in Resources */,
+				19956A4C1C7555C00031779F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19956A501C7555C00031779F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19956A5B1C7555C00031779F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -281,6 +461,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		19956A3E1C7555C00031779F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19956A471C7555C00031779F /* ViewController.swift in Sources */,
+				19956A451C7555C00031779F /* AppDelegate.swift in Sources */,
+				19956A6D1C7555E80031779F /* LoaderView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19956A4E1C7555C00031779F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19956A571C7555C00031779F /* LoaderViewOSXTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19956A591C7555C00031779F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19956A621C7555C00031779F /* LoaderViewOSXUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -293,6 +499,16 @@
 			isa = PBXTargetDependency;
 			target = 199569D11C74C1AA0031779F /* LoaderView */;
 			targetProxy = 199569F21C74C1AA0031779F /* PBXContainerItemProxy */;
+		};
+		19956A541C7555C00031779F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 19956A411C7555C00031779F /* LoaderViewOSX */;
+			targetProxy = 19956A531C7555C00031779F /* PBXContainerItemProxy */;
+		};
+		19956A5F1C7555C00031779F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 19956A411C7555C00031779F /* LoaderViewOSX */;
+			targetProxy = 19956A5E1C7555C00031779F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -311,6 +527,14 @@
 				199569DF1C74C1AA0031779F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		19956A4A1C7555C00031779F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				19956A4B1C7555C00031779F /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -469,6 +693,100 @@
 			};
 			name = Release;
 		};
+		19956A641C7555C00031779F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = LoaderViewOSX/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jeremyfox.LoaderViewOSX;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		19956A651C7555C00031779F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = LoaderViewOSX/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jeremyfox.LoaderViewOSX;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		19956A661C7555C00031779F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = LoaderViewOSXTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jeremyfox.LoaderViewOSXTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LoaderViewOSX.app/Contents/MacOS/LoaderViewOSX";
+			};
+			name = Debug;
+		};
+		19956A671C7555C00031779F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = LoaderViewOSXTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jeremyfox.LoaderViewOSXTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LoaderViewOSX.app/Contents/MacOS/LoaderViewOSX";
+			};
+			name = Release;
+		};
+		19956A681C7555C00031779F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = LoaderViewOSXUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jeremyfox.LoaderViewOSXUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				TEST_TARGET_NAME = LoaderViewOSX;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		19956A691C7555C00031779F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = LoaderViewOSXUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jeremyfox.LoaderViewOSXUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				TEST_TARGET_NAME = LoaderViewOSX;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -507,6 +825,30 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		19956A6A1C7555C00031779F /* Build configuration list for PBXNativeTarget "LoaderViewOSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19956A641C7555C00031779F /* Debug */,
+				19956A651C7555C00031779F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		19956A6B1C7555C00031779F /* Build configuration list for PBXNativeTarget "LoaderViewOSXTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19956A661C7555C00031779F /* Debug */,
+				19956A671C7555C00031779F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		19956A6C1C7555C00031779F /* Build configuration list for PBXNativeTarget "LoaderViewOSXUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19956A681C7555C00031779F /* Debug */,
+				19956A691C7555C00031779F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
