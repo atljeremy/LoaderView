@@ -60,10 +60,10 @@ SOFTWARE.
                 var points = [NSPoint](count: 3, repeatedValue: NSZeroPoint)
                 
                 switch self.elementAtIndex(i, associatedPoints: &points) {
-                case .MoveToBezierPathElement:CGPathMoveToPoint(path, nil, points[0].x, points[0].y)
-                case .LineToBezierPathElement:CGPathAddLineToPoint(path, nil, points[0].x, points[0].y)
-                case .CurveToBezierPathElement:CGPathAddCurveToPoint(path, nil, points[0].x, points[0].y, points[1].x, points[1].y, points[2].x, points[2].y)
-                case .ClosePathBezierPathElement:CGPathCloseSubpath(path)
+                case .MoveToBezierPathElement: CGPathMoveToPoint(path, nil, points[0].x, points[0].y)
+                case .LineToBezierPathElement: CGPathAddLineToPoint(path, nil, points[0].x, points[0].y)
+                case .CurveToBezierPathElement: CGPathAddCurveToPoint(path, nil, points[0].x, points[0].y, points[1].x, points[1].y, points[2].x, points[2].y)
+                case .ClosePathBezierPathElement: CGPathCloseSubpath(path)
                 didClosePath = true;
                 }
             }
@@ -74,6 +74,17 @@ SOFTWARE.
             
             return CGPathCreateCopy(path)
         }
+    }
+    
+    func setAnchorPoint(anchorPoint: NSPoint, view: NSView) {
+        guard let layer = view.layer else { return }
+        
+        let oldOrigin = layer.frame.origin
+        layer.anchorPoint = anchorPoint
+        let newOrigin = layer.frame.origin
+        
+        let transition = NSMakePoint(newOrigin.x - oldOrigin.x, newOrigin.y - oldOrigin.y)
+        layer.frame.origin = NSMakePoint(layer.frame.origin.x - transition.x, layer.frame.origin.y - transition.y)
     }
     
 #endif
@@ -125,15 +136,16 @@ class LoaderView: LVView {
             _blurView = LVVisualEffectView()
             _blurView.blendingMode = .WithinWindow
             _blurView.wantsLayer = true
-            _blurView.material = .Dark
+//            _blurView.material = .Dark
+            _blurView.appearance = NSAppearance(named: NSAppearanceNameVibrantDark)
             _blurView.state = .Active
             _blurView.translatesAutoresizingMaskIntoConstraints = false
             
             _vibrancyView = LVVisualEffectView()
             _vibrancyView.blendingMode = .WithinWindow
             _vibrancyView.wantsLayer = true
-            _vibrancyView.material = .Dark
             _vibrancyView.state = .Active
+            _vibrancyView.appearance = NSAppearance(named: NSAppearanceNameVibrantDark)
             _vibrancyView.translatesAutoresizingMaskIntoConstraints = false
         #endif
         
@@ -143,10 +155,10 @@ class LoaderView: LVView {
         
         var views: [String: LVView]
         #if os(iOS) || os(watchOS)
-        addSubview(_blurView)
-        views = ["blurView": _blurView]
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[blurView]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[blurView]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
+            addSubview(_blurView)
+            views = ["blurView": _blurView]
+            addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[blurView]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
+            addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[blurView]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
         #endif
         
         addSubview(_vibrancyView)
@@ -155,16 +167,13 @@ class LoaderView: LVView {
         addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[vibrancyView]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
         
         /// Configure label and add as subview of self
-        #if os(iOS) || os(watchOS)
-            addSubview(label)
-        #elseif os(OSX)
-            addSubview(label, positioned: .Out, relativeTo: _vibrancyView)
-        #endif
         label.translatesAutoresizingMaskIntoConstraints = false
         #if os(iOS) || os(watchOS)
             label.textAlignment = .Center
+            addSubview(label)
         #elseif os(OSX)
             //TODO: Set text alignement center
+            addSubview(label, positioned: .Above, relativeTo: _vibrancyView)
         #endif
         label.backgroundColor = LVColor.clearColor()
         label.textColor = LVColor.whiteColor()
@@ -187,6 +196,7 @@ class LoaderView: LVView {
         #elseif os(OSX)
             _spinnerViewOuter.wantsLayer = true
             _spinnerViewOuter.layer = _spinnerLayerOuter
+            
         #endif
         
         
@@ -203,7 +213,6 @@ class LoaderView: LVView {
         #elseif os(OSX)
             _spinnerViewInner.wantsLayer = true
             _spinnerViewInner.layer = _spinnerLayerInner
-            
         #endif
         
         
@@ -261,22 +270,39 @@ class LoaderView: LVView {
         _spinnerLayerInner.strokeEnd   = 0.4
         _spinnerLayerOuter.strokeStart = 0.0
         _spinnerLayerOuter.strokeEnd   = 0.6
-        view.addSubview(self)
-        startAnimating()
+        
         #if os(iOS) || os(watchOS)
             transform = CGAffineTransformIdentity
-            alpha = 0.0
-            UIView.animateWithDuration(0.3) {
-                self.alpha = 1.0
-            }
+            alpha = 0
         #elseif os(OSX)
-            NSAnimationContext.runAnimationGroup({ context in
-                context.duration = 1
-                self.animator().alphaValue = 0
-            }) {
-                self.alphaValue = 1
-            }
+            self.animator().alphaValue = 0
+            _blurView.animator().alphaValue = 0
+            _vibrancyView.animator().alphaValue = 0
         #endif
+        
+        view.addSubview(self)
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            
+            setAnchorPoint(CGPointMake(0.5, 0.5), view: self._spinnerViewInner)
+            setAnchorPoint(CGPointMake(0.5, 0.5), view: self._spinnerViewOuter)
+            
+            self.startAnimating()
+            #if os(iOS) || os(watchOS)
+                UIView.animateWithDuration(0.3) {
+                    self.alpha = 1
+                }
+            #elseif os(OSX)
+                NSAnimationContext.runAnimationGroup({ context in
+                    context.duration = 1
+                    self.animator().alphaValue = 1
+                    self._blurView.animator().alphaValue = 1
+                    self._vibrancyView.animator().alphaValue = 1
+                    self._spinnerViewInner.animator().alphaValue = 1
+                    self._spinnerViewOuter.animator().alphaValue = 1
+                }, completionHandler: nil)
+            #endif
+        }
     }
     
     func loadingComplete() {
@@ -290,22 +316,22 @@ class LoaderView: LVView {
     
     private func runAnimations() {
         #if os(iOS) || os(watchOS)
-            UIView.animateWithDuration(0.2, delay: 0.0, options: .CurveLinear, animations: { () -> Void in
+            UIView.animateWithDuration(0.2, delay: 0.0, options: .CurveLinear, animations: {
                 self._rotation += CGFloat(M_PI_4)
                 self._spinnerViewOuter.transform = CGAffineTransformMakeRotation(self._rotation)
                 self._spinnerViewInner.transform = CGAffineTransformMakeRotation(-self._rotation)
-            }) { (finished) -> Void in
+            }) { finished in
                 if finished {
                     if self.animating {
                         self.runAnimations()
                     } else {
-                        UIView.animateKeyframesWithDuration(1.0, delay: 0.0, options: .CalculationModeLinear, animations: { () -> Void in
+                        UIView.animateKeyframesWithDuration(1.0, delay: 0.0, options: .CalculationModeLinear, animations: {
                             
                             UIView.addKeyframeWithRelativeStartTime(0, relativeDuration: 1/2) {
                                 self._spinnerLayerInner.strokeStart = 0.0
-                                self._spinnerLayerInner.strokeEnd = 1.0
+                                self._spinnerLayerInner.strokeEnd   = 1.0
                                 self._spinnerLayerOuter.strokeStart = 0.0
-                                self._spinnerLayerOuter.strokeEnd = 1.0
+                                self._spinnerLayerOuter.strokeEnd   = 1.0
                             }
                             
                             UIView.addKeyframeWithRelativeStartTime(1/2, relativeDuration: 1/2) {
@@ -313,16 +339,15 @@ class LoaderView: LVView {
                                 self.alpha = 0.0
                             }
                             
-                        }, completion: { (finished) -> Void in
+                        }) { finished in
                             self.removeFromSuperview()
-                        })
+                        }
                     }
                 }
             }
         #elseif os(OSX)
-            _spinnerViewOuter.layer?.anchorPoint = CGPointMake(0.5, 0.5)
-            _spinnerViewInner.layer?.anchorPoint = CGPointMake(0.5, 0.5)
             NSAnimationContext.runAnimationGroup({ context in
+                context.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
                 context.duration = 0.2
                 self._rotation += CGFloat(M_PI_4)
                 self._spinnerViewOuter.layer?.setAffineTransform(CGAffineTransformMakeRotation(self._rotation))
@@ -332,10 +357,21 @@ class LoaderView: LVView {
                     self.runAnimations()
                 } else {
                     NSAnimationContext.runAnimationGroup({ context in
-                        context.duration = 1
-                        self.animator().alphaValue = 1
+                        context.duration = 0.5
+                        self._spinnerLayerInner.strokeStart = 0.0
+                        self._spinnerLayerInner.strokeEnd   = 1.0
+                        self._spinnerLayerOuter.strokeStart = 0.0
+                        self._spinnerLayerOuter.strokeEnd   = 1.0
+                        
                     }) {
-                        self.alphaValue = 0
+                        NSAnimationContext.runAnimationGroup({ context in
+                            context.duration = 1
+                            self.animator().alphaValue = 0
+                            self._blurView.animator().alphaValue = 0
+                            self._vibrancyView.animator().alphaValue = 0
+                        }) {
+                            self.removeFromSuperview()
+                        }
                     }
                 }
             }
