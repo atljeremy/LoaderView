@@ -12,10 +12,9 @@ class ViewController: UIViewController {
 
     private let loaderView = LoaderView()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    @IBAction func performLoadingTask(sender: AnyObject) {
         loaderView.label.text = "Loading..."
-        loaderView.startLoadingInView(view!)
+        loaderView.startLoadingInView(view)
         
         var delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(2.0 * Double(NSEC_PER_SEC)))
         dispatch_after(delayTime, dispatch_get_main_queue()) {

@@ -22,10 +22,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kvl-wI-UDG">
-                                <rect key="frame" x="0.0" y="240" width="600" height="121"/>
+                                <rect key="frame" x="0.0" y="240" width="600" height="120"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LoaderView" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="af1-Ut-Ndn">
-                                        <rect key="frame" x="20" y="20" width="560" height="44"/>
+                                        <rect key="frame" x="20" y="0.0" width="560" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="4fk-UQ-2mb"/>
                                         </constraints>
@@ -34,7 +34,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By Jeremy Fox" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YhZ-gB-cPA">
-                                        <rect key="frame" x="20" y="57" width="560" height="44"/>
+                                        <rect key="frame" x="20" y="37" width="560" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="wVN-IQ-3bs"/>
                                         </constraints>
@@ -42,15 +42,28 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ld-yb-f4k">
+                                        <rect key="frame" x="216" y="93" width="167" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="167" id="Vw9-dV-4LF"/>
+                                            <constraint firstAttribute="height" constant="30" id="naP-Hb-7Ii"/>
+                                        </constraints>
+                                        <state key="normal" title="Load Something!"/>
+                                        <connections>
+                                            <action selector="performLoadingTask:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A7O-MZ-DBk"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="af1-Ut-Ndn" secondAttribute="trailing" constant="20" id="5K9-Tz-4Qp"/>
-                                    <constraint firstAttribute="bottom" secondItem="YhZ-gB-cPA" secondAttribute="bottom" constant="20" id="C4f-75-7Oi"/>
-                                    <constraint firstItem="af1-Ut-Ndn" firstAttribute="top" secondItem="kvl-wI-UDG" secondAttribute="top" constant="20" id="IcD-yl-QhH"/>
+                                    <constraint firstItem="af1-Ut-Ndn" firstAttribute="top" secondItem="kvl-wI-UDG" secondAttribute="top" id="IcD-yl-QhH"/>
                                     <constraint firstItem="YhZ-gB-cPA" firstAttribute="leading" secondItem="kvl-wI-UDG" secondAttribute="leading" constant="20" id="Lg7-Fy-PNW"/>
+                                    <constraint firstItem="5Ld-yb-f4k" firstAttribute="centerX" secondItem="YhZ-gB-cPA" secondAttribute="centerX" id="Saz-M7-ILU"/>
                                     <constraint firstItem="YhZ-gB-cPA" firstAttribute="top" secondItem="af1-Ut-Ndn" secondAttribute="bottom" constant="-7" id="Wv3-EU-pl2"/>
+                                    <constraint firstItem="5Ld-yb-f4k" firstAttribute="top" secondItem="YhZ-gB-cPA" secondAttribute="bottom" constant="12" id="Y8Z-kq-WU9"/>
                                     <constraint firstAttribute="trailing" secondItem="YhZ-gB-cPA" secondAttribute="trailing" constant="20" id="ekW-kp-WQ9"/>
                                     <constraint firstItem="af1-Ut-Ndn" firstAttribute="leading" secondItem="kvl-wI-UDG" secondAttribute="leading" constant="20" id="izT-K0-0DO"/>
+                                    <constraint firstAttribute="bottom" secondItem="5Ld-yb-f4k" secondAttribute="bottom" constant="-3" id="wv8-z4-a08"/>
                                 </constraints>
                             </view>
                         </subviews>

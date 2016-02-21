@@ -677,6 +677,32 @@
                                 <rect key="frame" x="0.0" y="0.0" width="830" height="830"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="bg" id="1Qx-p4-4xZ"/>
                             </imageView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UHL-jJ-e6X">
+                                <rect key="frame" x="334" y="458" width="163" height="42"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="LoaderView" id="kg1-Cn-Gof">
+                                    <font key="font" size="25" name="AvenirNext-Regular"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BEz-8a-AY0">
+                                <rect key="frame" x="329" y="428" width="173" height="42"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="By Jeremy Fox" id="5nb-k9-G6v">
+                                    <font key="font" size="25" name="AvenirNext-Regular"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="phB-G4-jBs">
+                                <rect key="frame" x="344" y="392" width="143" height="32"/>
+                                <buttonCell key="cell" type="push" title="Load Something!" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="TTq-ft-cPf">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="performLoadingTask" target="XfG-lQ-9wD" id="Puo-dK-Bpb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="tFV-QY-43d" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="3Ww-gh-ctW"/>

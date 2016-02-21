@@ -12,9 +12,7 @@ class ViewController: NSViewController {
     
     private let loaderView = LoaderView()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    @IBAction func performLoadingTask(sender: AnyObject) {
         loaderView.label.stringValue = "Loading..."
         loaderView.startLoadingInView(view)
         
