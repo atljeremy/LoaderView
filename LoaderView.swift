@@ -42,62 +42,63 @@ SOFTWARE.
     public typealias LVViewController   = NSViewController
     public typealias LVView             = NSView
     public typealias LVVisualEffectView = NSVisualEffectView
-    public typealias LVBlurEffect       = NilLiteralConvertible
-    public typealias LVVibrancyEffect   = NilLiteralConvertible
+    public typealias LVBlurEffect       = ExpressibleByNilLiteral
+    public typealias LVVibrancyEffect   = ExpressibleByNilLiteral
     public typealias LVLabel            = NSTextField
     public typealias LVBezierPath       = NSBezierPath
     
     extension NSBezierPath {
-        var CGPath: CGPathRef? {
+        var CGPath: CGPath? {
             if self.elementCount == 0 {
                 return nil
             }
             
-            let path = CGPathCreateMutable()
+            let path = CGMutablePath()
             var didClosePath = false
             
             for i in 0...self.elementCount-1 {
-                var points = [NSPoint](count: 3, repeatedValue: NSZeroPoint)
+                var points = [NSPoint](repeating
+                    : NSZeroPoint, count: 3)
                 
-                switch self.elementAtIndex(i, associatedPoints: &points) {
-                case .MoveToBezierPathElement: CGPathMoveToPoint(path, nil, points[0].x, points[0].y)
-                case .LineToBezierPathElement: CGPathAddLineToPoint(path, nil, points[0].x, points[0].y)
-                case .CurveToBezierPathElement: CGPathAddCurveToPoint(path, nil, points[0].x, points[0].y, points[1].x, points[1].y, points[2].x, points[2].y)
-                case .ClosePathBezierPathElement: CGPathCloseSubpath(path)
+                switch self.element(at: i, associatedPoints: &points) {
+                case .moveToBezierPathElement: CGPathMoveToPoint(path, nil, points[0].x, points[0].y)
+                case .lineToBezierPathElement: CGPathAddLineToPoint(path, nil, points[0].x, points[0].y)
+                case .curveToBezierPathElement: CGPathAddCurveToPoint(path, nil, points[0].x, points[0].y, points[1].x, points[1].y, points[2].x, points[2].y)
+                case .closePathBezierPathElement: CGPathCloseSubpath(path)
                 didClosePath = true;
                 }
             }
             
             if !didClosePath {
-                CGPathCloseSubpath(path)
+                path.closeSubpath()
             }
             
-            return CGPathCreateCopy(path)
+            return path.copy()
         }
     }
     
 #endif
 
-class LoaderView: LVView {
+public class LoaderView: LVView {
     
-    private var _rotation: CGFloat = 0.0
-    private let _spinnerViewInner = LVView()
-    private let _spinnerViewOuter = LVView()
-    private let _spinnerLayerInner = CAShapeLayer()
-    private let _spinnerLayerOuter = CAShapeLayer()
-    private var _blurView: LVVisualEffectView
-    private var _vibrancyView: LVVisualEffectView
-    private(set) var animating = false
-    private(set) var label = LVLabel()
+    fileprivate var _rotation: CGFloat = 0.0
+    fileprivate let _spinnerViewInner = LVView()
+    fileprivate let _spinnerViewOuter = LVView()
+    fileprivate let _spinnerLayerInner = CAShapeLayer()
+    fileprivate let _spinnerLayerOuter = CAShapeLayer()
+    fileprivate var _blurView: LVVisualEffectView
+    fileprivate var _vibrancyView: LVVisualEffectView
+    public fileprivate(set) var animating = false
+    public fileprivate(set) var label = LVLabel()
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         
         #if os(iOS) || os(watchOS)
-            let _blurEffect = UIBlurEffect(style: .Dark)
+            let _blurEffect = UIBlurEffect(style: .dark)
             _blurView = LVVisualEffectView(effect: _blurEffect)
             _blurView.translatesAutoresizingMaskIntoConstraints = false
             
-            let visualEffect = LVVibrancyEffect(forBlurEffect: _blurEffect)
+            let visualEffect = LVVibrancyEffect(blurEffect: _blurEffect)
             _vibrancyView = LVVisualEffectView(effect: visualEffect)
             _vibrancyView.translatesAutoresizingMaskIntoConstraints = false
         #elseif os(OSX)
@@ -119,32 +120,32 @@ class LoaderView: LVView {
         super.init(coder: aDecoder)
     }
     
-    init() {
+    public init() {
         #if os(iOS) || os(watchOS)
-            let _blurEffect = UIBlurEffect(style: .Dark)
+            let _blurEffect = UIBlurEffect(style: .dark)
             _blurView = UIVisualEffectView(effect: _blurEffect)
             _blurView.translatesAutoresizingMaskIntoConstraints = false
             
-            let visualEffect = UIVibrancyEffect(forBlurEffect: _blurEffect)
+            let visualEffect = UIVibrancyEffect(blurEffect: _blurEffect)
             _vibrancyView = UIVisualEffectView(effect: visualEffect)
             _vibrancyView.translatesAutoresizingMaskIntoConstraints = false
         #elseif os(OSX)
             _blurView = LVVisualEffectView()
-            _blurView.blendingMode = .WithinWindow
+            _blurView.blendingMode = .withinWindow
             _blurView.wantsLayer = true
             _blurView.appearance = NSAppearance(named: NSAppearanceNameVibrantDark)
-            _blurView.state = .Active
+            _blurView.state = .active
             _blurView.translatesAutoresizingMaskIntoConstraints = false
             
             _vibrancyView = LVVisualEffectView()
-            _vibrancyView.blendingMode = .WithinWindow
+            _vibrancyView.blendingMode = .withinWindow
             _vibrancyView.wantsLayer = true
-            _vibrancyView.state = .Active
+            _vibrancyView.state = .active
             _vibrancyView.appearance = NSAppearance(named: NSAppearanceNameVibrantDark)
             _vibrancyView.translatesAutoresizingMaskIntoConstraints = false
         #endif
         
-        super.init(frame: CGRectZero)
+        super.init(frame: CGRect.zero)
         
         translatesAutoresizingMaskIntoConstraints = false
         
@@ -152,52 +153,52 @@ class LoaderView: LVView {
         #if os(iOS) || os(watchOS)
             addSubview(_blurView)
             views = ["blurView": _blurView]
-            addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[blurView]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
-            addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[blurView]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
+            addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[blurView]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
+            addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[blurView]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
         #endif
         
         addSubview(_vibrancyView)
         views = ["vibrancyView": _vibrancyView]
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[vibrancyView]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[vibrancyView]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[vibrancyView]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[vibrancyView]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
         
         /// Configure label and add as subview
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.backgroundColor = LVColor.clearColor()
-        label.textColor = LVColor.whiteColor()
+        label.backgroundColor = LVColor.clear
+        label.textColor = LVColor.white
         views = ["label": label]
         #if os(iOS) || os(watchOS)
-            label.textAlignment = .Center
+            label.textAlignment = .center
             addSubview(label)
             
-            addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[label(==44)]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
-            addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:[label(==150)]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
-            addConstraint(NSLayoutConstraint(item: label, attribute: .CenterX, relatedBy: .Equal, toItem: self, attribute: .CenterX, multiplier: 1.0, constant: 0.0))
-            addConstraint(NSLayoutConstraint(item: label, attribute: .CenterY, relatedBy: .Equal, toItem: self, attribute: .CenterY, multiplier: 1.0, constant: 0.0))
+            addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[label(==44)]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
+            addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:[label(==150)]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
+            addConstraint(NSLayoutConstraint(item: label, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1.0, constant: 0.0))
+            addConstraint(NSLayoutConstraint(item: label, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1.0, constant: 0.0))
         #elseif os(OSX)
             //TODO: Set text alignement center
             _vibrancyView.addSubview(label)
-            label.editable = false
-            label.selectable = false
-            label.bordered = false
-            label.bezeled = false
+            label.isEditable = false
+            label.isSelectable = false
+            label.isBordered = false
+            label.isBezeled = false
             label.drawsBackground = false
             
-            _vibrancyView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[label(==44)]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
-            _vibrancyView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:[label(==150)]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
-            _vibrancyView.addConstraint(NSLayoutConstraint(item: label, attribute: .CenterX, relatedBy: .Equal, toItem: _vibrancyView, attribute: .CenterX, multiplier: 1.0, constant: 0.0))
-            _vibrancyView.addConstraint(NSLayoutConstraint(item: label, attribute: .CenterY, relatedBy: .Equal, toItem: _vibrancyView, attribute: .CenterY, multiplier: 1.0, constant: 0.0))
+            _vibrancyView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[label(==44)]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
+            _vibrancyView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:[label(==150)]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
+            _vibrancyView.addConstraint(NSLayoutConstraint(item: label, attribute: .centerX, relatedBy: .equal, toItem: _vibrancyView, attribute: .centerX, multiplier: 1.0, constant: 0.0))
+            _vibrancyView.addConstraint(NSLayoutConstraint(item: label, attribute: .centerY, relatedBy: .equal, toItem: _vibrancyView, attribute: .centerY, multiplier: 1.0, constant: 0.0))
         #endif
 
         
         /// Configure _spinnerLayerOuter and add as sublayer to _spinnerView
-        _spinnerLayerOuter.path = LVBezierPath(ovalInRect: CGRectMake(0, 0, 200, 200)).CGPath
+        _spinnerLayerOuter.path = LVBezierPath(ovalIn: CGRect(x: 0, y: 0, width: 200, height: 200)).cgPath
         _spinnerLayerOuter.lineWidth = 7.0
         _spinnerLayerOuter.strokeStart = 0.0
         _spinnerLayerOuter.strokeEnd = 0.6
         _spinnerLayerOuter.lineCap = kCALineCapRound
-        _spinnerLayerOuter.fillColor = LVColor.clearColor().CGColor
-        _spinnerLayerOuter.strokeColor = LVColor.whiteColor().CGColor
+        _spinnerLayerOuter.fillColor = LVColor.clear.cgColor
+        _spinnerLayerOuter.strokeColor = LVColor.white.cgColor
         #if os(iOS) || os(watchOS)
             _spinnerViewOuter.layer.addSublayer(_spinnerLayerOuter)
         #elseif os(OSX)
@@ -207,13 +208,13 @@ class LoaderView: LVView {
         
         
         /// Configure _spinnerLayerInner and add as sublayer to _spinnerView
-        _spinnerLayerInner.path = LVBezierPath(ovalInRect: CGRectMake(0, 0, 175, 175)).CGPath
+        _spinnerLayerInner.path = LVBezierPath(ovalIn: CGRect(x: 0, y: 0, width: 175, height: 175)).cgPath
         _spinnerLayerInner.lineWidth = 5.0
         _spinnerLayerInner.strokeStart = 0.0
         _spinnerLayerInner.strokeEnd = 0.4
         _spinnerLayerInner.lineCap = kCALineCapRound
-        _spinnerLayerInner.fillColor = LVColor.clearColor().CGColor
-        _spinnerLayerInner.strokeColor = LVColor.whiteColor().CGColor
+        _spinnerLayerInner.fillColor = LVColor.clear.cgColor
+        _spinnerLayerInner.strokeColor = LVColor.white.cgColor
         #if os(iOS) || os(watchOS)
             _spinnerViewInner.layer.addSublayer(_spinnerLayerInner)
         #elseif os(OSX)
@@ -230,15 +231,15 @@ class LoaderView: LVView {
             _vibrancyView.contentView.addSubview(_spinnerViewOuter)
             _vibrancyView.contentView.addSubview(_spinnerViewInner)
             views = ["spinnerViewInner": _spinnerViewInner, "spinnerViewOuter": _spinnerViewOuter]
-            _vibrancyView.contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[spinnerViewOuter(==200)]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
-            _vibrancyView.contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:[spinnerViewOuter(==200)]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
-            _vibrancyView.contentView.addConstraint(NSLayoutConstraint(item: _spinnerViewInner, attribute: .CenterX, relatedBy: .Equal, toItem: _vibrancyView.contentView, attribute: .CenterX, multiplier: 1.0, constant: 0.0))
-            _vibrancyView.contentView.addConstraint(NSLayoutConstraint(item: _spinnerViewInner, attribute: .CenterY, relatedBy: .Equal, toItem: _vibrancyView.contentView, attribute: .CenterY, multiplier: 1.0, constant: 0.0))
+            _vibrancyView.contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[spinnerViewOuter(==200)]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
+            _vibrancyView.contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:[spinnerViewOuter(==200)]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
+            _vibrancyView.contentView.addConstraint(NSLayoutConstraint(item: _spinnerViewInner, attribute: .centerX, relatedBy: .equal, toItem: _vibrancyView.contentView, attribute: .centerX, multiplier: 1.0, constant: 0.0))
+            _vibrancyView.contentView.addConstraint(NSLayoutConstraint(item: _spinnerViewInner, attribute: .centerY, relatedBy: .equal, toItem: _vibrancyView.contentView, attribute: .centerY, multiplier: 1.0, constant: 0.0))
             
-            _vibrancyView.contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[spinnerViewInner(==175)]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
-            _vibrancyView.contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:[spinnerViewInner(==175)]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
-            _vibrancyView.contentView.addConstraint(NSLayoutConstraint(item: _spinnerViewOuter, attribute: .CenterX, relatedBy: .Equal, toItem: _vibrancyView.contentView, attribute: .CenterX, multiplier: 1.0, constant: 0.0))
-            _vibrancyView.contentView.addConstraint(NSLayoutConstraint(item: _spinnerViewOuter, attribute: .CenterY, relatedBy: .Equal, toItem: _vibrancyView.contentView, attribute: .CenterY, multiplier: 1.0, constant: 0.0))
+            _vibrancyView.contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[spinnerViewInner(==175)]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
+            _vibrancyView.contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:[spinnerViewInner(==175)]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
+            _vibrancyView.contentView.addConstraint(NSLayoutConstraint(item: _spinnerViewOuter, attribute: .centerX, relatedBy: .equal, toItem: _vibrancyView.contentView, attribute: .centerX, multiplier: 1.0, constant: 0.0))
+            _vibrancyView.contentView.addConstraint(NSLayoutConstraint(item: _spinnerViewOuter, attribute: .centerY, relatedBy: .equal, toItem: _vibrancyView.contentView, attribute: .centerY, multiplier: 1.0, constant: 0.0))
         #elseif os(OSX)
             _vibrancyView.addSubview(_spinnerViewOuter)
             _vibrancyView.addSubview(_spinnerViewInner)
@@ -260,14 +261,14 @@ class LoaderView: LVView {
     }
     
 #if os(iOS) || os(watchOS)
-    override func didMoveToSuperview() {
+    override public func didMoveToSuperview() {
         let views = ["loaderView": self]
-        superview?.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[loaderView]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
-        superview?.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[loaderView]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
+        superview?.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[loaderView]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
+        superview?.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[loaderView]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
         super.didMoveToSuperview()
     }
 #elseif os(OSX)
-    override func viewDidMoveToSuperview() {
+    override public func viewDidMoveToSuperview() {
         let views = ["loaderView": self]
         superview?.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[loaderView]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
         superview?.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[loaderView]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
@@ -291,14 +292,14 @@ class LoaderView: LVView {
     }
 #endif
     
-    func startLoadingInView(view: LVView) {
+    public func startLoadingInView(_ view: LVView) {
         _spinnerLayerInner.strokeStart = 0.0
         _spinnerLayerInner.strokeEnd   = 0.4
         _spinnerLayerOuter.strokeStart = 0.0
         _spinnerLayerOuter.strokeEnd   = 0.6
         
         #if os(iOS) || os(watchOS)
-            transform = CGAffineTransformIdentity
+            transform = CGAffineTransform.identity
             alpha = 0
         #elseif os(OSX)
             self.animator().alphaValue = 0
@@ -310,7 +311,7 @@ class LoaderView: LVView {
         
         view.addSubview(self)
         
-        dispatch_async(dispatch_get_main_queue()) {
+        DispatchQueue.main.async {
             
             #if os(OSX)
                 self.setAnchorPoint(CGPointMake(0.5, 0.5), view: self._spinnerViewInner)
@@ -319,9 +320,9 @@ class LoaderView: LVView {
             
             self.startAnimating()
             #if os(iOS) || os(watchOS)
-                UIView.animateWithDuration(0.3) {
+                UIView.animate(withDuration: 0.3, animations: {
                     self.alpha = 1
-                }
+                }) 
             #elseif os(OSX)
                 /// This displatch_after is basically a hack to hide the woncky movement of the lines before they start to spin, not exactly sure why this is happening
                 let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(0.2 * Double(NSEC_PER_SEC)))
@@ -343,37 +344,37 @@ class LoaderView: LVView {
         }
     }
     
-    func loadingComplete() {
+    public func loadingComplete() {
         animating = false
     }
     
-    private func startAnimating() {
+    fileprivate func startAnimating() {
         animating = true
         runAnimations()
     }
     
-    private func runAnimations() {
+    fileprivate func runAnimations() {
         #if os(iOS) || os(watchOS)
-            UIView.animateWithDuration(0.2, delay: 0.0, options: .CurveLinear, animations: {
+            UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveLinear, animations: {
                 self._rotation += CGFloat(M_PI_4)
-                self._spinnerViewOuter.transform = CGAffineTransformMakeRotation(self._rotation)
-                self._spinnerViewInner.transform = CGAffineTransformMakeRotation(-self._rotation)
+                self._spinnerViewOuter.transform = CGAffineTransform(rotationAngle: self._rotation)
+                self._spinnerViewInner.transform = CGAffineTransform(rotationAngle: -self._rotation)
             }) { finished in
                 if finished {
                     if self.animating {
                         self.runAnimations()
                     } else {
-                        UIView.animateKeyframesWithDuration(1.0, delay: 0.0, options: .CalculationModeLinear, animations: {
+                        UIView.animateKeyframes(withDuration: 1.0, delay: 0.0, options: UIViewKeyframeAnimationOptions(), animations: {
                             
-                            UIView.addKeyframeWithRelativeStartTime(0, relativeDuration: 1/2) {
+                            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1/2) {
                                 self._spinnerLayerInner.strokeStart = 0.0
                                 self._spinnerLayerInner.strokeEnd   = 1.0
                                 self._spinnerLayerOuter.strokeStart = 0.0
                                 self._spinnerLayerOuter.strokeEnd   = 1.0
                             }
                             
-                            UIView.addKeyframeWithRelativeStartTime(1/2, relativeDuration: 1/2) {
-                                self.transform = CGAffineTransformMakeScale(5.0, 5.0)
+                            UIView.addKeyframe(withRelativeStartTime: 1/2, relativeDuration: 1/2) {
+                                self.transform = CGAffineTransform(scaleX: 5.0, y: 5.0)
                                 self.alpha = 0.0
                             }
                             

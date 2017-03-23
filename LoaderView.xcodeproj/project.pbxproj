@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1979408C1E83FE1B00FA41A5 /* LoaderView-iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 1979408A1E83FE1B00FA41A5 /* LoaderView-iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1979408F1E83FE1B00FA41A5 /* LoaderView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 197940881E83FE1B00FA41A5 /* LoaderView.framework */; };
+		197940901E83FE1B00FA41A5 /* LoaderView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 197940881E83FE1B00FA41A5 /* LoaderView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		197940951E83FE2700FA41A5 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19956A031C74C1E50031779F /* LoaderView.swift */; };
+		1979409F1E83FE5F00FA41A5 /* LoaderView-macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 1979409D1E83FE5F00FA41A5 /* LoaderView-macOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		197940A21E83FE5F00FA41A5 /* LoaderView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1979409B1E83FE5F00FA41A5 /* LoaderView.framework */; };
+		197940A31E83FE5F00FA41A5 /* LoaderView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1979409B1E83FE5F00FA41A5 /* LoaderView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		197940A81E83FE6700FA41A5 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19956A031C74C1E50031779F /* LoaderView.swift */; };
 		199569D61C74C1AA0031779F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199569D51C74C1AA0031779F /* AppDelegate.swift */; };
 		199569D81C74C1AA0031779F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199569D71C74C1AA0031779F /* ViewController.swift */; };
 		199569DB1C74C1AA0031779F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 199569D91C74C1AA0031779F /* Main.storyboard */; };
@@ -14,17 +22,29 @@
 		199569E01C74C1AA0031779F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 199569DE1C74C1AA0031779F /* LaunchScreen.storyboard */; };
 		199569EB1C74C1AA0031779F /* LoaderViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199569EA1C74C1AA0031779F /* LoaderViewTests.swift */; };
 		199569F61C74C1AA0031779F /* LoaderViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199569F51C74C1AA0031779F /* LoaderViewUITests.swift */; };
-		19956A041C74C1E50031779F /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19956A031C74C1E50031779F /* LoaderView.swift */; };
 		19956A451C7555C00031779F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19956A441C7555C00031779F /* AppDelegate.swift */; };
 		19956A471C7555C00031779F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19956A461C7555C00031779F /* ViewController.swift */; };
 		19956A491C7555C00031779F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19956A481C7555C00031779F /* Assets.xcassets */; };
 		19956A4C1C7555C00031779F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19956A4A1C7555C00031779F /* Main.storyboard */; };
 		19956A571C7555C00031779F /* LoaderViewOSXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19956A561C7555C00031779F /* LoaderViewOSXTests.swift */; };
 		19956A621C7555C00031779F /* LoaderViewOSXUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19956A611C7555C00031779F /* LoaderViewOSXUITests.swift */; };
-		19956A6D1C7555E80031779F /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19956A031C74C1E50031779F /* LoaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		1979408D1E83FE1B00FA41A5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 199569CA1C74C1AA0031779F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 197940871E83FE1B00FA41A5;
+			remoteInfo = "LoaderView-iOS";
+		};
+		197940A01E83FE5F00FA41A5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 199569CA1C74C1AA0031779F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1979409A1E83FE5F00FA41A5;
+			remoteInfo = "LoaderView-macOS";
+		};
 		199569E71C74C1AA0031779F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 199569CA1C74C1AA0031779F /* Project object */;
@@ -55,8 +75,39 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		197940941E83FE1B00FA41A5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				197940901E83FE1B00FA41A5 /* LoaderView.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		197940A71E83FE5F00FA41A5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				197940A31E83FE5F00FA41A5 /* LoaderView.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		199569D21C74C1AA0031779F /* LoaderView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoaderView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		197940881E83FE1B00FA41A5 /* LoaderView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LoaderView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1979408A1E83FE1B00FA41A5 /* LoaderView-iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LoaderView-iOS.h"; sourceTree = "<group>"; };
+		1979408B1E83FE1B00FA41A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1979409B1E83FE5F00FA41A5 /* LoaderView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LoaderView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1979409D1E83FE5F00FA41A5 /* LoaderView-macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LoaderView-macOS.h"; sourceTree = "<group>"; };
+		1979409E1E83FE5F00FA41A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		199569D21C74C1AA0031779F /* LoaderViewiOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoaderViewiOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		199569D51C74C1AA0031779F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		199569D71C74C1AA0031779F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		199569DA1C74C1AA0031779F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -69,8 +120,8 @@
 		199569F11C74C1AA0031779F /* LoaderViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoaderViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		199569F51C74C1AA0031779F /* LoaderViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderViewUITests.swift; sourceTree = "<group>"; };
 		199569F71C74C1AA0031779F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		19956A031C74C1E50031779F /* LoaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoaderView.swift; path = ../LoaderView.swift; sourceTree = "<group>"; };
-		19956A421C7555C00031779F /* LoaderViewOSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoaderViewOSX.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		19956A031C74C1E50031779F /* LoaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoaderView.swift; path = ../../LoaderView.swift; sourceTree = "<group>"; };
+		19956A421C7555C00031779F /* LoaderViewmacOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoaderViewmacOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19956A441C7555C00031779F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19956A461C7555C00031779F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		19956A481C7555C00031779F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -85,10 +136,25 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		197940841E83FE1B00FA41A5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		197940971E83FE5F00FA41A5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		199569CF1C74C1AA0031779F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1979408F1E83FE1B00FA41A5 /* LoaderView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +176,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				197940A21E83FE5F00FA41A5 /* LoaderView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,16 +197,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		199569C91C74C1AA0031779F = {
+		197940891E83FE1B00FA41A5 /* LoaderView-iOS */ = {
 			isa = PBXGroup;
 			children = (
 				19956A031C74C1E50031779F /* LoaderView.swift */,
+				1979408A1E83FE1B00FA41A5 /* LoaderView-iOS.h */,
+				1979408B1E83FE1B00FA41A5 /* Info.plist */,
+			);
+			path = "LoaderView-iOS";
+			sourceTree = "<group>";
+		};
+		1979409C1E83FE5F00FA41A5 /* LoaderView-macOS */ = {
+			isa = PBXGroup;
+			children = (
+				1979409D1E83FE5F00FA41A5 /* LoaderView-macOS.h */,
+				1979409E1E83FE5F00FA41A5 /* Info.plist */,
+			);
+			path = "LoaderView-macOS";
+			sourceTree = "<group>";
+		};
+		199569C91C74C1AA0031779F = {
+			isa = PBXGroup;
+			children = (
 				199569D41C74C1AA0031779F /* LoaderView */,
 				199569E91C74C1AA0031779F /* LoaderViewTests */,
 				199569F41C74C1AA0031779F /* LoaderViewUITests */,
 				19956A431C7555C00031779F /* LoaderViewOSX */,
 				19956A551C7555C00031779F /* LoaderViewOSXTests */,
 				19956A601C7555C00031779F /* LoaderViewOSXUITests */,
+				197940891E83FE1B00FA41A5 /* LoaderView-iOS */,
+				1979409C1E83FE5F00FA41A5 /* LoaderView-macOS */,
 				199569D31C74C1AA0031779F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -147,12 +234,14 @@
 		199569D31C74C1AA0031779F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				199569D21C74C1AA0031779F /* LoaderView.app */,
+				199569D21C74C1AA0031779F /* LoaderViewiOSApp.app */,
 				199569E61C74C1AA0031779F /* LoaderViewTests.xctest */,
 				199569F11C74C1AA0031779F /* LoaderViewUITests.xctest */,
-				19956A421C7555C00031779F /* LoaderViewOSX.app */,
+				19956A421C7555C00031779F /* LoaderViewmacOSApp.app */,
 				19956A521C7555C00031779F /* LoaderViewOSXTests.xctest */,
 				19956A5D1C7555C00031779F /* LoaderViewOSXUITests.xctest */,
+				197940881E83FE1B00FA41A5 /* LoaderView.framework */,
+				1979409B1E83FE5F00FA41A5 /* LoaderView.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -220,22 +309,79 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		197940851E83FE1B00FA41A5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1979408C1E83FE1B00FA41A5 /* LoaderView-iOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		197940981E83FE5F00FA41A5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1979409F1E83FE5F00FA41A5 /* LoaderView-macOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		199569D11C74C1AA0031779F /* LoaderView */ = {
+		197940871E83FE1B00FA41A5 /* LoaderView_iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 199569FA1C74C1AA0031779F /* Build configuration list for PBXNativeTarget "LoaderView" */;
+			buildConfigurationList = 197940911E83FE1B00FA41A5 /* Build configuration list for PBXNativeTarget "LoaderView_iOS" */;
 			buildPhases = (
-				199569CE1C74C1AA0031779F /* Sources */,
-				199569CF1C74C1AA0031779F /* Frameworks */,
-				199569D01C74C1AA0031779F /* Resources */,
+				197940831E83FE1B00FA41A5 /* Sources */,
+				197940841E83FE1B00FA41A5 /* Frameworks */,
+				197940851E83FE1B00FA41A5 /* Headers */,
+				197940861E83FE1B00FA41A5 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = LoaderView;
+			name = LoaderView_iOS;
+			productName = "LoaderView-iOS";
+			productReference = 197940881E83FE1B00FA41A5 /* LoaderView.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		1979409A1E83FE5F00FA41A5 /* LoaderView_macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 197940A41E83FE5F00FA41A5 /* Build configuration list for PBXNativeTarget "LoaderView_macOS" */;
+			buildPhases = (
+				197940961E83FE5F00FA41A5 /* Sources */,
+				197940971E83FE5F00FA41A5 /* Frameworks */,
+				197940981E83FE5F00FA41A5 /* Headers */,
+				197940991E83FE5F00FA41A5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LoaderView_macOS;
+			productName = "LoaderView-macOS";
+			productReference = 1979409B1E83FE5F00FA41A5 /* LoaderView.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		199569D11C74C1AA0031779F /* LoaderViewiOSApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 199569FA1C74C1AA0031779F /* Build configuration list for PBXNativeTarget "LoaderViewiOSApp" */;
+			buildPhases = (
+				199569CE1C74C1AA0031779F /* Sources */,
+				199569CF1C74C1AA0031779F /* Frameworks */,
+				199569D01C74C1AA0031779F /* Resources */,
+				197940941E83FE1B00FA41A5 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1979408E1E83FE1B00FA41A5 /* PBXTargetDependency */,
+			);
+			name = LoaderViewiOSApp;
 			productName = LoaderView;
-			productReference = 199569D21C74C1AA0031779F /* LoaderView.app */;
+			productReference = 199569D21C74C1AA0031779F /* LoaderViewiOSApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 		199569E51C74C1AA0031779F /* LoaderViewTests */ = {
@@ -274,21 +420,23 @@
 			productReference = 199569F11C74C1AA0031779F /* LoaderViewUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		19956A411C7555C00031779F /* LoaderViewOSX */ = {
+		19956A411C7555C00031779F /* LoaderViewmacOSApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 19956A6A1C7555C00031779F /* Build configuration list for PBXNativeTarget "LoaderViewOSX" */;
+			buildConfigurationList = 19956A6A1C7555C00031779F /* Build configuration list for PBXNativeTarget "LoaderViewmacOSApp" */;
 			buildPhases = (
 				19956A3E1C7555C00031779F /* Sources */,
 				19956A3F1C7555C00031779F /* Frameworks */,
 				19956A401C7555C00031779F /* Resources */,
+				197940A71E83FE5F00FA41A5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				197940A11E83FE5F00FA41A5 /* PBXTargetDependency */,
 			);
-			name = LoaderViewOSX;
+			name = LoaderViewmacOSApp;
 			productName = LoaderViewOSX;
-			productReference = 19956A421C7555C00031779F /* LoaderViewOSX.app */;
+			productReference = 19956A421C7555C00031779F /* LoaderViewmacOSApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 		19956A511C7555C00031779F /* LoaderViewOSXTests */ = {
@@ -334,18 +482,29 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Jeremy Fox";
 				TargetAttributes = {
+					197940871E83FE1B00FA41A5 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					1979409A1E83FE5F00FA41A5 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
 					199569D11C74C1AA0031779F = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0820;
 					};
 					199569E51C74C1AA0031779F = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0820;
 						TestTargetID = 199569D11C74C1AA0031779F;
 					};
 					199569F01C74C1AA0031779F = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0820;
 						TestTargetID = 199569D11C74C1AA0031779F;
 					};
 					19956A411C7555C00031779F = {
@@ -374,17 +533,33 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				199569D11C74C1AA0031779F /* LoaderView */,
+				199569D11C74C1AA0031779F /* LoaderViewiOSApp */,
 				199569E51C74C1AA0031779F /* LoaderViewTests */,
 				199569F01C74C1AA0031779F /* LoaderViewUITests */,
-				19956A411C7555C00031779F /* LoaderViewOSX */,
+				19956A411C7555C00031779F /* LoaderViewmacOSApp */,
 				19956A511C7555C00031779F /* LoaderViewOSXTests */,
 				19956A5C1C7555C00031779F /* LoaderViewOSXUITests */,
+				197940871E83FE1B00FA41A5 /* LoaderView_iOS */,
+				1979409A1E83FE5F00FA41A5 /* LoaderView_macOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		197940861E83FE1B00FA41A5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		197940991E83FE5F00FA41A5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		199569D01C74C1AA0031779F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -435,13 +610,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		197940831E83FE1B00FA41A5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				197940951E83FE2700FA41A5 /* LoaderView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		197940961E83FE5F00FA41A5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				197940A81E83FE6700FA41A5 /* LoaderView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		199569CE1C74C1AA0031779F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				199569D81C74C1AA0031779F /* ViewController.swift in Sources */,
 				199569D61C74C1AA0031779F /* AppDelegate.swift in Sources */,
-				19956A041C74C1E50031779F /* LoaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,7 +657,6 @@
 			files = (
 				19956A471C7555C00031779F /* ViewController.swift in Sources */,
 				19956A451C7555C00031779F /* AppDelegate.swift in Sources */,
-				19956A6D1C7555E80031779F /* LoaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,24 +679,34 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		1979408E1E83FE1B00FA41A5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 197940871E83FE1B00FA41A5 /* LoaderView_iOS */;
+			targetProxy = 1979408D1E83FE1B00FA41A5 /* PBXContainerItemProxy */;
+		};
+		197940A11E83FE5F00FA41A5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1979409A1E83FE5F00FA41A5 /* LoaderView_macOS */;
+			targetProxy = 197940A01E83FE5F00FA41A5 /* PBXContainerItemProxy */;
+		};
 		199569E81C74C1AA0031779F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 199569D11C74C1AA0031779F /* LoaderView */;
+			target = 199569D11C74C1AA0031779F /* LoaderViewiOSApp */;
 			targetProxy = 199569E71C74C1AA0031779F /* PBXContainerItemProxy */;
 		};
 		199569F31C74C1AA0031779F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 199569D11C74C1AA0031779F /* LoaderView */;
+			target = 199569D11C74C1AA0031779F /* LoaderViewiOSApp */;
 			targetProxy = 199569F21C74C1AA0031779F /* PBXContainerItemProxy */;
 		};
 		19956A541C7555C00031779F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 19956A411C7555C00031779F /* LoaderViewOSX */;
+			target = 19956A411C7555C00031779F /* LoaderViewmacOSApp */;
 			targetProxy = 19956A531C7555C00031779F /* PBXContainerItemProxy */;
 		};
 		19956A5F1C7555C00031779F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 19956A411C7555C00031779F /* LoaderViewOSX */;
+			target = 19956A411C7555C00031779F /* LoaderViewmacOSApp */;
 			targetProxy = 19956A5E1C7555C00031779F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -540,6 +739,120 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		197940921E83FE1B00FA41A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "LoaderView-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jeremyfox.LoaderView-iOS";
+				PRODUCT_NAME = LoaderView;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		197940931E83FE1B00FA41A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "LoaderView-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jeremyfox.LoaderView-iOS";
+				PRODUCT_NAME = LoaderView;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		197940A51E83FE5F00FA41A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "LoaderView-macOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jeremyfox.LoaderView-macOS";
+				PRODUCT_NAME = LoaderView;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		197940A61E83FE5F00FA41A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "LoaderView-macOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jeremyfox.LoaderView-macOS";
+				PRODUCT_NAME = LoaderView;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		199569F81C74C1AA0031779F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -553,8 +866,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -598,8 +913,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -618,6 +935,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -626,22 +944,26 @@
 		199569FB1C74C1AA0031779F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LoaderView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jeremyfox.LoaderView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		199569FC1C74C1AA0031779F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LoaderView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jeremyfox.LoaderView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -653,6 +975,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jeremyfox.LoaderViewTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LoaderView.app/LoaderView";
 			};
 			name = Debug;
@@ -665,6 +988,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jeremyfox.LoaderViewTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LoaderView.app/LoaderView";
 			};
 			name = Release;
@@ -676,6 +1000,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jeremyfox.LoaderViewUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = LoaderView;
 				USES_XCTRUNNER = YES;
 			};
@@ -688,6 +1013,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jeremyfox.LoaderViewUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = LoaderView;
 				USES_XCTRUNNER = YES;
 			};
@@ -696,6 +1022,7 @@
 		19956A641C7555C00031779F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -711,6 +1038,7 @@
 		19956A651C7555C00031779F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -790,6 +1118,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		197940911E83FE1B00FA41A5 /* Build configuration list for PBXNativeTarget "LoaderView_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				197940921E83FE1B00FA41A5 /* Debug */,
+				197940931E83FE1B00FA41A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		197940A41E83FE5F00FA41A5 /* Build configuration list for PBXNativeTarget "LoaderView_macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				197940A51E83FE5F00FA41A5 /* Debug */,
+				197940A61E83FE5F00FA41A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		199569CD1C74C1AA0031779F /* Build configuration list for PBXProject "LoaderView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -799,7 +1143,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		199569FA1C74C1AA0031779F /* Build configuration list for PBXNativeTarget "LoaderView" */ = {
+		199569FA1C74C1AA0031779F /* Build configuration list for PBXNativeTarget "LoaderViewiOSApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				199569FB1C74C1AA0031779F /* Debug */,
@@ -826,13 +1170,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		19956A6A1C7555C00031779F /* Build configuration list for PBXNativeTarget "LoaderViewOSX" */ = {
+		19956A6A1C7555C00031779F /* Build configuration list for PBXNativeTarget "LoaderViewmacOSApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				19956A641C7555C00031779F /* Debug */,
 				19956A651C7555C00031779F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		19956A6B1C7555C00031779F /* Build configuration list for PBXNativeTarget "LoaderViewOSXTests" */ = {
 			isa = XCConfigurationList;
@@ -841,6 +1186,7 @@
 				19956A671C7555C00031779F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		19956A6C1C7555C00031779F /* Build configuration list for PBXNativeTarget "LoaderViewOSXUITests" */ = {
 			isa = XCConfigurationList;
@@ -849,6 +1195,7 @@
 				19956A691C7555C00031779F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import LoaderView
 
 class ViewController: NSViewController {
     

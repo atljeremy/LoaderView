@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0720"
+   LastUpgradeVersion = "0820"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "199569D11C74C1AA0031779F"
-               BuildableName = "LoaderView.app"
-               BlueprintName = "LoaderView"
+               BlueprintIdentifier = "197940871E83FE1B00FA41A5"
+               BuildableName = "LoaderView_iOS.framework"
+               BlueprintName = "LoaderView_iOS"
                ReferencedContainer = "container:LoaderView.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,36 +28,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "199569E51C74C1AA0031779F"
-               BuildableName = "LoaderViewTests.xctest"
-               BlueprintName = "LoaderViewTests"
-               ReferencedContainer = "container:LoaderView.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "199569F01C74C1AA0031779F"
-               BuildableName = "LoaderViewUITests.xctest"
-               BlueprintName = "LoaderViewUITests"
-               ReferencedContainer = "container:LoaderView.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "199569D11C74C1AA0031779F"
-            BuildableName = "LoaderView.app"
-            BlueprintName = "LoaderView"
-            ReferencedContainer = "container:LoaderView.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -71,16 +42,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "199569D11C74C1AA0031779F"
-            BuildableName = "LoaderView.app"
-            BlueprintName = "LoaderView"
+            BlueprintIdentifier = "197940871E83FE1B00FA41A5"
+            BuildableName = "LoaderView_iOS.framework"
+            BlueprintName = "LoaderView_iOS"
             ReferencedContainer = "container:LoaderView.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -90,16 +60,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "199569D11C74C1AA0031779F"
-            BuildableName = "LoaderView.app"
-            BlueprintName = "LoaderView"
+            BlueprintIdentifier = "197940871E83FE1B00FA41A5"
+            BuildableName = "LoaderView_iOS.framework"
+            BlueprintName = "LoaderView_iOS"
             ReferencedContainer = "container:LoaderView.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
