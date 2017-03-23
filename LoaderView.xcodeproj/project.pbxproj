@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		191D448F1E843E8D001AF89D /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191D448E1E843E8D001AF89D /* LoaderView.swift */; };
+		191D44911E843EAA001AF89D /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191D448E1E843E8D001AF89D /* LoaderView.swift */; };
 		1979408C1E83FE1B00FA41A5 /* LoaderView-iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 1979408A1E83FE1B00FA41A5 /* LoaderView-iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1979408F1E83FE1B00FA41A5 /* LoaderView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 197940881E83FE1B00FA41A5 /* LoaderView.framework */; };
 		197940901E83FE1B00FA41A5 /* LoaderView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 197940881E83FE1B00FA41A5 /* LoaderView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		197940951E83FE2700FA41A5 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19956A031C74C1E50031779F /* LoaderView.swift */; };
 		1979409F1E83FE5F00FA41A5 /* LoaderView-macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 1979409D1E83FE5F00FA41A5 /* LoaderView-macOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		197940A21E83FE5F00FA41A5 /* LoaderView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1979409B1E83FE5F00FA41A5 /* LoaderView.framework */; };
 		197940A31E83FE5F00FA41A5 /* LoaderView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1979409B1E83FE5F00FA41A5 /* LoaderView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		197940A81E83FE6700FA41A5 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19956A031C74C1E50031779F /* LoaderView.swift */; };
 		199569D61C74C1AA0031779F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199569D51C74C1AA0031779F /* AppDelegate.swift */; };
 		199569D81C74C1AA0031779F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199569D71C74C1AA0031779F /* ViewController.swift */; };
 		199569DB1C74C1AA0031779F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 199569D91C74C1AA0031779F /* Main.storyboard */; };
@@ -101,6 +101,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		191D448E1E843E8D001AF89D /* LoaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = SOURCE_ROOT; };
 		197940881E83FE1B00FA41A5 /* LoaderView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LoaderView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1979408A1E83FE1B00FA41A5 /* LoaderView-iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LoaderView-iOS.h"; sourceTree = "<group>"; };
 		1979408B1E83FE1B00FA41A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -120,7 +121,6 @@
 		199569F11C74C1AA0031779F /* LoaderViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoaderViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		199569F51C74C1AA0031779F /* LoaderViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderViewUITests.swift; sourceTree = "<group>"; };
 		199569F71C74C1AA0031779F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		19956A031C74C1E50031779F /* LoaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoaderView.swift; path = ../../LoaderView.swift; sourceTree = "<group>"; };
 		19956A421C7555C00031779F /* LoaderViewmacOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoaderViewmacOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19956A441C7555C00031779F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19956A461C7555C00031779F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -197,10 +197,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		191D44901E843E9D001AF89D /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				191D448E1E843E8D001AF89D /* LoaderView.swift */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
 		197940891E83FE1B00FA41A5 /* LoaderView-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				19956A031C74C1E50031779F /* LoaderView.swift */,
 				1979408A1E83FE1B00FA41A5 /* LoaderView-iOS.h */,
 				1979408B1E83FE1B00FA41A5 /* Info.plist */,
 			);
@@ -219,6 +226,7 @@
 		199569C91C74C1AA0031779F = {
 			isa = PBXGroup;
 			children = (
+				191D44901E843E9D001AF89D /* Sources */,
 				199569D41C74C1AA0031779F /* LoaderView */,
 				199569E91C74C1AA0031779F /* LoaderViewTests */,
 				199569F41C74C1AA0031779F /* LoaderViewUITests */,
@@ -614,7 +622,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				197940951E83FE2700FA41A5 /* LoaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -622,7 +629,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				197940A81E83FE6700FA41A5 /* LoaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,6 +638,7 @@
 			files = (
 				199569D81C74C1AA0031779F /* ViewController.swift in Sources */,
 				199569D61C74C1AA0031779F /* AppDelegate.swift in Sources */,
+				191D448F1E843E8D001AF89D /* LoaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -657,6 +664,7 @@
 			files = (
 				19956A471C7555C00031779F /* ViewController.swift in Sources */,
 				19956A451C7555C00031779F /* AppDelegate.swift in Sources */,
+				191D44911E843EAA001AF89D /* LoaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -944,7 +952,6 @@
 		199569FB1C74C1AA0031779F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LoaderView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -957,7 +964,6 @@
 		199569FC1C74C1AA0031779F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LoaderView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1022,7 +1028,6 @@
 		19956A641C7555C00031779F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1038,7 +1043,6 @@
 		19956A651C7555C00031779F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1125,6 +1129,7 @@
 				197940931E83FE1B00FA41A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		197940A41E83FE5F00FA41A5 /* Build configuration list for PBXNativeTarget "LoaderView_macOS" */ = {
 			isa = XCConfigurationList;
@@ -1133,6 +1138,7 @@
 				197940A61E83FE5F00FA41A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		199569CD1C74C1AA0031779F /* Build configuration list for PBXProject "LoaderView" */ = {
 			isa = XCConfigurationList;
