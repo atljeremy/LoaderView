@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "197940871E83FE1B00FA41A5"
-               BuildableName = "LoaderView.framework"
-               BlueprintName = "LoaderView_iOS"
+               BuildableName = "LoaderViewiOS.framework"
+               BlueprintName = "LoaderViewiOS"
                ReferencedContainer = "container:LoaderView.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,8 +46,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "197940871E83FE1B00FA41A5"
-            BuildableName = "LoaderView.framework"
-            BlueprintName = "LoaderView_iOS"
+            BuildableName = "LoaderViewiOS.framework"
+            BlueprintName = "LoaderViewiOS"
             ReferencedContainer = "container:LoaderView.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -64,8 +64,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "197940871E83FE1B00FA41A5"
-            BuildableName = "LoaderView.framework"
-            BlueprintName = "LoaderView_iOS"
+            BuildableName = "LoaderViewiOS.framework"
+            BlueprintName = "LoaderViewiOS"
             ReferencedContainer = "container:LoaderView.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
